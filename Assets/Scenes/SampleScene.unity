@@ -247,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 7509995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -256,6 +256,11 @@ Transform:
 --- !u!1 &392152405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8963147774247237782, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+  m_PrefabInstance: {fileID: 581022157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &392152407 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4654415297401527489, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
   m_PrefabInstance: {fileID: 581022157}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &392152408
@@ -294,7 +299,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.4648438, y: 1.4648438}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -404,6 +409,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 392152407}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: maxAcc
       value: 9
       objectReference: {fileID: 0}
@@ -420,9 +429,45 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: brakePower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: acceleration
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 42bc23e11fcb72847aeeb709be14664d, type: 3}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 719e9d0c4810cac4583729f27e04dc02, type: 3}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52fb645f46d985d448f117996459067b, type: 3}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4684372d04d2ef840b3689e1caf94bd4, type: 3}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: c1425dea0f235d54e89e728784dd6f41, type: 3}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 76e497fa77f318b468b4b614f9c786c3, type: 3}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: sprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: a874f4c3ca47b854c9f040bb004d019a, type: 3}
     - target: {fileID: 2689516524949149332, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -463,6 +508,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4654415297401527489, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42bc23e11fcb72847aeeb709be14664d, type: 3}
     - target: {fileID: 5499932270215233348, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -507,7 +556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efa78df57aa48429b6ae2ecae95c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 7509996}
+  startHealth: 10
+  maxHealth: 30
+  ballSize: 3
+  ballCollider: {fileID: 7509996}
+  ballTransform: {fileID: 7509998}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
