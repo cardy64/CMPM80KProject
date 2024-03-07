@@ -18,6 +18,8 @@ public class Snowball : MonoBehaviour
     void FixedUpdate()
     {
         health -= Time.fixedDeltaTime;
+        if (health < 0)
+            health = 0;
         float scale = ballSize * health / maxHealth;
         ballTransform.localScale = Vector2.one * scale;
         ballTransform.localPosition = Vector2.up * scale/2 + Vector2.up/2;
