@@ -73,7 +73,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbfeb8d360b95e4d998a84f563d21d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  maxAcc: 14.8
+  maxSpeed: 3.78
+  maxTurnSpeed: 0.5
+  AngularAcc: 30
+  LinearAcc: 15
+  friction: 0.5
+  turnFriction: 0.5
   rb: {fileID: 2843699391454428648}
 --- !u!1 &8963147774247237782
 GameObject:
