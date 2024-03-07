@@ -507,7 +507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efa78df57aa48429b6ae2ecae95c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 7509996}
+  startHealth: 10
+  maxHealth: 30
+  ballSize: 1
+  ballCollider: {fileID: 7509996}
+  ballTransform: {fileID: 7509998}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
