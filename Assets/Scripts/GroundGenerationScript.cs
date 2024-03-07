@@ -36,7 +36,6 @@ public class GroundGenerationScript : MonoBehaviour
                     continue;
                 }
 
-                print("found a new one"); 
                 Vector3Int newPos = new Vector3Int(gridPos.x + x, gridPos.y + y, gridPos.z);
                 Vector3 backToWorldPos = grid.CellToWorld(newPos);
                 backToWorldPos.x += UnityEngine.Random.Range(-2, 2);
