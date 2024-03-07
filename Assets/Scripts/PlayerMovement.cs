@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float maxSpeed = 7;
-    public float acceleration = 1;
-    public float handling = 1;
+    public float maxSpeed = 7f;
+    public float acceleration = 1f;
+    public float handling = 1f;
+    public float brakePower = 5f;
     float angularVel = 0;
     Vector2 linearVel = Vector2.zero;
     Vector2 input = Vector2.zero;
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal"); // Get horizontal input
         input.y = 1f + Input.GetAxisRaw("Vertical") * 4; // Get vertical input
         if (input.y < 0)
-            input.y *= 10;
+            input.y *= brakePower;
     }
 
     void FixedUpdate()
