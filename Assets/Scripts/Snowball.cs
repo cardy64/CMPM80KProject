@@ -1,11 +1,12 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Snowball : MonoBehaviour
 {
     public float startHealth = 10f; // Time in seconds before health runs out
-    public float maxHealth = 30f;
     public float ballSize = 1f;
-    private float health;
+    public float meltSpeed = 1;
+    public float health;
 
     public BoxCollider2D ballCollider; // Reference to the snowball's collider
     public Transform ballTransform; // Reference to the snowball's transform
@@ -17,11 +18,16 @@ public class Snowball : MonoBehaviour
 
     void FixedUpdate()
     {
-        health -= Time.fixedDeltaTime;
+        health -= Time.fixedDeltaTime * meltSpeed;
         if (health < 0)
             health = 0;
-        float scale = ballSize * health / maxHealth;
-        ballTransform.localScale = Vector2.one * scale;
-        ballTransform.localPosition = Vector2.up * scale/2 + Vector2.up/2;
+        float radius = ballSize * math.pow(3f * health / 4f / math.PI, 1f/3f);
+        print(radius);
+        ballTransform.localScale = Vector2.one * radius;
+        ballTransform.localPosition = Vector2.up * radius/2f + Vector2.up/2f;
+    }
+
+    public void addSnow(float snow) {
+        health += snow;
     }
 }

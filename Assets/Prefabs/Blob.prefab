@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2812740703227122137}
   - component: {fileID: -8311853088256760956}
+  - component: {fileID: 2990119318848089882}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -72,9 +73,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2990119318848089882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662695319937173161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819239f9141432f4db8af1ffc286b516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: d9a50a36bd6422f40966868f99976706, type: 3}
+  - {fileID: 21300000, guid: dcc41b7a3b1508a4aa27e675c93da65c, type: 3}
+  - {fileID: 21300000, guid: 0bc06d46ae243e54c8261f3ee3b81564, type: 3}

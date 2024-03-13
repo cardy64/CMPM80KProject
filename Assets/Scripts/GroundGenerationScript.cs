@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundGenerationScript : MonoBehaviour
 {
+    public float spawnChance = 0.5f;
     public GameObject[] prefabs;
 
     private Camera camera;
@@ -35,7 +36,7 @@ public class GroundGenerationScript : MonoBehaviour
                 }
                 touchedSpots.Add(str);
 
-                if (UnityEngine.Random.Range(0, 10) < 5) {
+                if (UnityEngine.Random.Range(0, 1) > spawnChance) {
                     continue;
                 }
 

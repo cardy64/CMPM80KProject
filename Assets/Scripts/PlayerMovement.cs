@@ -18,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb; // Reference to the Rigidbody2D component
     public SpriteRenderer sr; // Reference to the player's sprite renderer
 
+    Snowball snowballScript;
+
+    void Start()
+    {
+        snowballScript = gameObject.GetComponentInChildren<Snowball>();
+    }
+
     void Update()
     {
         // Input gathering
@@ -58,5 +65,13 @@ public class PlayerMovement : MonoBehaviour
         //update position
         rb.MovePosition(rb.position + linearVel * Time.fixedDeltaTime);
         rb.SetRotation(angularVel * 360 * 7/44);
+    }
+
+    public void hitObject(bool addSnow) {
+        if (!addSnow) {
+            linearVel /= 10;
+        } else {
+            snowballScript.addSnow(1);
+        }
     }
 }

@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c876c98ba3072c146bbc96b7d5446c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addsSnow: 0
+  addSnow: 1
