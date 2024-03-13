@@ -1,21 +1,24 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+
 public class GroundGenerationScript : MonoBehaviour
 {
-
-    public Grid grid;
     public GameObject[] prefabs;
 
     private Camera camera;
     private List<String> touchedSpots = new List<String>();
+
+    private Grid grid;
+    public int gridSize;
     
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main;
+
+        grid = GetComponent<Grid>();
+        gridSize = (int) grid.cellSize.x;
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class GroundGenerationScript : MonoBehaviour
                 float randomAngle = UnityEngine.Random.Range(0f, 360f);
                 Quaternion randomRotation = Quaternion.Euler(0, 0, randomAngle);
 
-                Instantiate(prefabs[(int) UnityEngine.Random.Range(0, 2)], backToWorldPos, randomRotation);
+                Instantiate(prefabs[(int) UnityEngine.Random.Range(0, prefabs.Length)], backToWorldPos, randomRotation);
             }
         }
         
