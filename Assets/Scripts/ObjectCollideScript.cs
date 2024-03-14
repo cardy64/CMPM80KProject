@@ -6,6 +6,8 @@ public class ObjectCollideScript : MonoBehaviour
 {
 
     public bool addSnow;
+    public bool rotate;
+
     GameObject player;
     PlayerMovement playerMovement;
 
@@ -14,6 +16,14 @@ public class ObjectCollideScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerMovement = player.GetComponent<PlayerMovement>();
+
+        float rotateAmount = 0;
+
+        if (rotate) {
+            rotateAmount = Random.Range(0f, 360f);
+        }
+
+        transform.Rotate(0, 0, rotateAmount);
     }
 
     void Update(){}

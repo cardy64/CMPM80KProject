@@ -1,3 +1,4 @@
+using Cinemachine;
 using Unity.Mathematics;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -10,6 +11,14 @@ public class PlayerMovement : MonoBehaviour
     public float acceleration = 1f;
     public float handling = 1f;
     public float brakePower = 5f;
+
+    public float stillZoom = 8f;
+    public float zoomMultiplier = 0.4f;
+    public float changeSpeed = 0.02f;
+    float zoomGoal;
+
+    public CinemachineVirtualCamera cvc;
+
     float angularVel = 0;
     float animTimer = 0;
     Vector2 linearVel = Vector2.zero;
@@ -23,13 +32,16 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         snowballScript = gameObject.GetComponentInChildren<Snowball>();
+
+        zoomGoal = stillZoom;
     }
 
     void Update()
     {
         // Input gathering
         input.x = Input.GetAxisRaw("Horizontal"); // Get horizontal input
-        input.y = 1f + Input.GetAxisRaw("Vertical") * 4; // Get vertical input
+        // input.y = 1f + Input.GetAxisRaw("Vertical") * 4; // Get vertical input
+        input.y = 4f;
         if (input.y < 0)
             input.y *= brakePower;
         
@@ -42,6 +54,23 @@ public class PlayerMovement : MonoBehaviour
             sprites[sprites.Length-1] = sr.sprite;
         }
         animTimer += Time.deltaTime;
+
+        zoomGoal = stillZoom + linearVel.magnitude * zoomMultiplier;
+
+        if (cvc.m_Lens.OrthographicSize > zoomGoal) {
+            cvc.m_Lens.OrthographicSize -= changeSpeed;
+            if (cvc.m_Lens.OrthographicSize < zoomGoal) {
+                cvc.m_Lens.OrthographicSize = zoomGoal;
+            }
+        }
+
+        if (cvc.m_Lens.OrthographicSize < zoomGoal) {
+            cvc.m_Lens.OrthographicSize += changeSpeed;
+            if (cvc.m_Lens.OrthographicSize > zoomGoal) {
+                cvc.m_Lens.OrthographicSize = zoomGoal;
+            }
+        }
+
     }
 
     void FixedUpdate()
