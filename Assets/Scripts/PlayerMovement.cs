@@ -1,5 +1,6 @@
 using Cinemachine;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -7,6 +8,9 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    private bool moving = false;
+
     public Sprite[] sprites;
     public float maxSpeed = 7f;
     public float acceleration = 1f;
@@ -20,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public float zoomMultiplier = 0.4f;
     public float changeSpeed = 0.02f;
     float zoomGoal;
+
+    public GameObject startScreen;
+    public GameObject endScreen;
 
     public CinemachineVirtualCamera cvc;
 
@@ -49,6 +56,15 @@ public class PlayerMovement : MonoBehaviour
         // Input gathering
         input.x = Input.GetAxisRaw("Horizontal"); // Get horizontal input
         // input.y = 1f + Input.GetAxisRaw("Vertical") * 4; // Get vertical input
+
+        // if (input.x != 0) {
+        //     moving = true;
+        // }
+
+        // if (!moving) {
+        //     return;
+        // }
+
         input.y = 4f;
         if (input.y < 0)
             input.y *= brakePower;
@@ -83,6 +99,12 @@ public class PlayerMovement : MonoBehaviour
         // Match bg music speed to linear velocity
         bgMusic.pitch = (linearVel.magnitude * 0.01f) + 1f;
 
+        if (snowballScript.health <= 0) {
+            linearVel.x = 0;
+            linearVel.y = 0;
+
+            endScreen.SetActive(true);
+        }
     }
 
     void FixedUpdate()
