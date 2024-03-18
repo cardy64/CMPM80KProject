@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float objectWorth = 2f;
     public float hitPenaltyMod = 2f;
     public Material ballMaterial;
+    public SpriteRenderer ballSR;
 
     public float stillZoom = 8f;
     public float zoomMultiplier = 0.4f;

@@ -29,7 +29,7 @@ public class Snowball : MonoBehaviour
             health = 0;
         float radius = startSizeMod + ballSize * math.pow(3f * health / 4f / math.PI, 1f/3f);
         ballTransform.localScale = Vector2.one * radius;
-        ballTransform.localPosition = Vector2.up * radius + Vector2.up/2f;
+        ballTransform.localPosition = Vector2.up * radius + Vector2.up * 1/2f;
     }
 
     void Update()
