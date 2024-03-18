@@ -266,6 +266,22 @@ PrefabInstance:
       propertyPath: bgMusic
       value: 
       objectReference: {fileID: 747211267}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: handling
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: stillZoom
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: objectWorth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: hitPenaltyMod
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1156697778822210399, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -319,8 +335,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: ballScale
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: meltSpeed
-      value: 0.7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: startSizeMod
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8750720018224880429, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_Name

@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float acceleration = 1f;
     public float handling = 1f;
     public float brakePower = 5f;
+    public float objectWorth = 2f;
+    public float hitPenaltyMod = 2f;
 
     public float stillZoom = 8f;
     public float zoomMultiplier = 0.4f;
@@ -104,9 +106,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void hitObject(bool addSnow) {
         if (!addSnow) {
-            linearVel /= 10;
+            linearVel /= 5;
+            snowballScript.addSnow(-objectWorth*hitPenaltyMod);
         } else {
-            snowballScript.addSnow(1);
+            snowballScript.addSnow(objectWorth);
         }
     }
 }
