@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GroundGenerationScript : MonoBehaviour
 {
     public float spawnChance = 0.5f;
     public GameObject[] prefabs;
+    List<GameObject> queue = new List<GameObject>();
 
     private Camera camera;
     private List<String> touchedSpots = new List<String>();
@@ -25,6 +27,7 @@ public class GroundGenerationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // camera.pixelWidth/2, 
         Vector3 worldPos = camera.ScreenToWorldPoint(new Vector3(-camera.pixelWidth/2, -camera.pixelHeight/2, camera.nearClipPlane));
         Vector3 worldPos2 = camera.ScreenToWorldPoint(new Vector3(camera.pixelWidth/2, camera.pixelHeight/2, camera.nearClipPlane));
@@ -39,22 +42,55 @@ public class GroundGenerationScript : MonoBehaviour
                     continue;
                 }
                 touchedSpots.Add(str);
+                if (gridPos.x + x == 0 &&
+                    gridPos.y + y == 0) {
+                    continue;
+                }
 
                 if (UnityEngine.Random.Range(0, 1) > spawnChance) {
-                    continue;
+                    // continue;
                 }
 
                 Vector3Int newPos = new Vector3Int(gridPos.x + x, gridPos.y + y, gridPos.z);
                 Vector3 backToWorldPos = grid.CellToWorld(newPos);
-                backToWorldPos.x += UnityEngine.Random.Range(-2, 2);
-                backToWorldPos.y += UnityEngine.Random.Range(-2, 2);
+                backToWorldPos.x += UnityEngine.Random.Range(-5, 5);
+                backToWorldPos.y += UnityEngine.Random.Range(-5, 5);
 
                 // float randomAngle = UnityEngine.Random.Range(0f, 360f);
                 // Quaternion randomRotation = Quaternion.Euler(0, 0, randomAngle);
                 Quaternion randomRotation = Quaternion.Euler(0, 0, 0);
 
-                Instantiate(prefabs[(int) UnityEngine.Random.Range(0, prefabs.Length)], backToWorldPos, randomRotation);
+                Instantiate(getRandomObject(), backToWorldPos, randomRotation);
             }
+        }
+    }
+
+    GameObject getRandomObject() {
+        if (queue.Count == 0) {
+            for (int i = 0; i < prefabs.Length; i++) {
+                for (int ii = 0; ii < 3; ii++) {
+                    queue.Add(prefabs[i]);
+                }
+            }
+            Shuffle(queue);
+        }
+        print(queue.Count);
+        GameObject ret = queue[0];
+        queue.RemoveAt(0);
+        return ret;
+    }
+
+    private static System.Random rng = new System.Random();  
+
+    public static void Shuffle(IList<GameObject> list)
+    {
+        int n = list.Count;
+        while (n > 1) {
+            n--;
+            int k = rng.Next(n + 1);
+            GameObject value = list[k];
+            list[k] = list[n];
+            list[n] = value;
         }
     }
 }
