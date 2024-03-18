@@ -135,3 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addSnow: 1
   rotate: 0
+  breakSfx:
+  - {fileID: 8300000, guid: aaa84430a25388d4cb795824e67e9158, type: 3}
+  - {fileID: 8300000, guid: 252bb35ee5dc6a24b8179cfa3ddb6d1e, type: 3}
+  - {fileID: 8300000, guid: f03d6e42e2a5fea41978705167ed799a, type: 3}

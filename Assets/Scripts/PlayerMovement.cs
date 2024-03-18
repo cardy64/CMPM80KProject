@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public CinemachineVirtualCamera cvc;
 
+    public AudioSource bgMusic;
+
     float angularVel = 0;
     float animTimer = 0;
     Vector2 linearVel = Vector2.zero;
@@ -55,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         }
         animTimer += Time.deltaTime;
 
+        // Match camera zoom to linear velocity
         zoomGoal = stillZoom + linearVel.magnitude * zoomMultiplier;
 
         if (cvc.m_Lens.OrthographicSize > zoomGoal) {
@@ -70,6 +73,9 @@ public class PlayerMovement : MonoBehaviour
                 cvc.m_Lens.OrthographicSize = zoomGoal;
             }
         }
+
+        // Match bg music speed to linear velocity
+        bgMusic.pitch = (linearVel.magnitude * 0.01f) + 1f;
 
     }
 

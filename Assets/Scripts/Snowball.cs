@@ -22,7 +22,6 @@ public class Snowball : MonoBehaviour
         if (health < 0)
             health = 0;
         float radius = ballSize * math.pow(3f * health / 4f / math.PI, 1f/3f);
-        print(radius);
         ballTransform.localScale = Vector2.one * radius;
         ballTransform.localPosition = Vector2.up * radius/2f + Vector2.up/2f;
     }

@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addSnow: 0
   rotate: 1
+  breakSfx:
+  - {fileID: 8300000, guid: 2e484d630d8719646b6b5ae469a6f32c, type: 3}
 --- !u!60 &4428560752760892210
 PolygonCollider2D:
   m_ObjectHideFlags: 0
