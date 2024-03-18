@@ -279,6 +279,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: ballMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: bd7296906c3c580468731410df0e97c5, type: 2}
+    - target: {fileID: 75304328086625378, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: hitPenaltyMod
       value: 7
       objectReference: {fileID: 0}
@@ -286,6 +290,22 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1305091728540329532, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305091728540329532, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305091728540329532, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305091728540329532, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd7296906c3c580468731410df0e97c5, type: 2}
     - target: {fileID: 2689516524949149332, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -326,6 +346,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4940069067413989655, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940069067413989655, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5499932270215233348, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -334,6 +362,10 @@ PrefabInstance:
       propertyPath: ballSize
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: bd7296906c3c580468731410df0e97c5, type: 2}
     - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: ballScale
       value: 0.3
