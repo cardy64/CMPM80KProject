@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7272633633057755372, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: meltSpeed
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

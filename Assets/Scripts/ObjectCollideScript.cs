@@ -7,6 +7,7 @@ public class ObjectCollideScript : MonoBehaviour
 
     public bool addSnow;
     public bool rotate;
+    public AudioSource audio;
 
     GameObject player;
     PlayerMovement playerMovement;
@@ -16,6 +17,9 @@ public class ObjectCollideScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerMovement = player.GetComponent<PlayerMovement>();
+
+        GameObject audioSource = GameObject.FindGameObjectsWithTag("Respawn")[0];
+        audio = audioSource.GetComponent<AudioSource>();
 
         float rotateAmount = 0;
 
@@ -33,5 +37,7 @@ public class ObjectCollideScript : MonoBehaviour
         Destroy(gameObject);
 
         playerMovement.hitObject(addSnow);
+
+        audio.Play();
     }
 }
