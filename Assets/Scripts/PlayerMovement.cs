@@ -2,6 +2,7 @@ using Cinemachine;
 using Unity.Mathematics;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float brakePower = 5f;
     public float objectWorth = 2f;
     public float hitPenaltyMod = 2f;
+    public Material ballMaterial;
 
     public float stillZoom = 8f;
     public float zoomMultiplier = 0.4f;
@@ -38,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
         snowballScript = gameObject.GetComponentInChildren<Snowball>();
 
         zoomGoal = stillZoom;
+
+        ballMaterial.mainTextureOffset = Vector2.zero;
     }
 
     void Update()
@@ -110,6 +114,13 @@ public class PlayerMovement : MonoBehaviour
             snowballScript.addSnow(-objectWorth*hitPenaltyMod);
         } else {
             snowballScript.addSnow(objectWorth);
+        }
+    }
+
+    public void scrollBall(float ballSize) {
+        // Scroll ball texture
+        if (ballSize > 0) {
+            ballMaterial.mainTextureOffset += Vector2.down * linearVel.magnitude / (ballSize*2*math.PI) * Time.fixedDeltaTime;
         }
     }
 }
