@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectCollideScript : MonoBehaviour
@@ -19,6 +17,7 @@ public class ObjectCollideScript : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerMovement = player.GetComponent<PlayerMovement>();
         audioSource = player.GetComponent<AudioSource>();
+        audioSource.volume = 0.4f;
 
         float rotateAmount = 0;
 
@@ -28,8 +27,6 @@ public class ObjectCollideScript : MonoBehaviour
 
         transform.Rotate(0, 0, rotateAmount);
     }
-
-    void Update(){}
 
     void OnTriggerEnter2D(Collider2D collision2D)
     {
