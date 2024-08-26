@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
@@ -54,6 +55,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        
         // Input gathering
         input.x = Input.GetAxisRaw("Horizontal"); // Get horizontal input
         // input.y = 1f + Input.GetAxisRaw("Vertical") * 4; // Get vertical input

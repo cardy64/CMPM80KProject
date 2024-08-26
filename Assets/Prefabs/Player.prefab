@@ -220,9 +220,12 @@ MonoBehaviour:
   objectWorth: 5
   hitPenaltyMod: 7
   ballMaterial: {fileID: 2100000, guid: bd7296906c3c580468731410df0e97c5, type: 2}
+  ballSR: {fileID: 0}
   stillZoom: 8
   zoomMultiplier: 0.4
   changeSpeed: 0.02
+  startScreen: {fileID: 0}
+  endScreen: {fileID: 0}
   cvc: {fileID: 0}
   bgMusic: {fileID: 2225271977066003546}
   rb: {fileID: 2843699391454428648}

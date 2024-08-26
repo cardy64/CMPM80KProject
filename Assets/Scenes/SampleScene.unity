@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,7 +164,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9098039, g: 0.94509804, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.87602353, g: 0.909407, b: 0.9622642, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -317,7 +316,15 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b1c7537e666eed046afd1a7525e85cac, type: 3}
     - target: {fileID: 2303695392150884281, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303695392150884281, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303695392150884281, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2303695392150884281, guid: ac4f287817a59a04088fd2bbe6adc3d1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

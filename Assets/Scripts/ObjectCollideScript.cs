@@ -17,7 +17,7 @@ public class ObjectCollideScript : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerMovement = player.GetComponent<PlayerMovement>();
         audioSource = player.GetComponent<AudioSource>();
-        audioSource.volume = 0.4f;
+        audioSource.volume = 0.1f;
 
         float rotateAmount = 0;
 
